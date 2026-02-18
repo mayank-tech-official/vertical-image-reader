@@ -73,7 +73,7 @@ Chapter59/
 #### Inside the script, edit ONLY these two lines:
 ```java
 const CHAPTER = null // Enter Your Folder Name;
-const TOTAL_PAGES = null // Enter No Of Pages;
+const TOTAL_PAGES = null // Enter Your No Of Pages;
 ```
 
 ## 3️⃣ Change for another chapter
