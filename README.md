@@ -72,8 +72,8 @@ Chapter59/
 ## 2️⃣ Open `vertical-image-reader.html`
 #### Inside the script, edit ONLY these two lines:
 ```java
-const CHAPTER = "Chapter59";
-const TOTAL_PAGES = 100;
+const CHAPTER = null // Enter Your Folder Name;
+const TOTAL_PAGES = null // Enter No Of Pages;
 ```
 
 ## 3️⃣ Change for another chapter
