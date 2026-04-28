@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scroll Reader</title>
+
+<style>
+body{
+  margin:0;
+  background:#000;
+}
+
+/* container */
+.viewer{
+  width:100%;
+  max-width:900px;
+  margin:auto;
+}
+
+/* images */
+.viewer img{
+  width:100%;
+  display:block;      /* removes inline gaps */
+  margin:0;           /* no space between images */
+  padding:0;
+  background:black;
+}
+
+/* page counter floating */
+.counter{
+  position:fixed;
+  bottom:15px;
+  right:20px;
+  color:white;
+  background:rgba(0,0,0,0.6);
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:14px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="viewer" id="viewer"></div>
+<div class="counter" id="counter">1</div>
+
+<script>
+
+// ===== CHANGE ONLY THESE =====
+const CHAPTER = null //Enter Your Folder Name;
+const TOTAL_PAGES = null //Enter Your No Of Pages;
+// =============================
+
+const viewer = document.getElementById("viewer");
+
+// auto load images
+for(let i=1;i<=TOTAL_PAGES;i++){
+  const num = String(i).padStart(3,'0');
+  const img = document.createElement("img");
+  img.src = `${CHAPTER}/${num}.webp`;
+  viewer.appendChild(img);
+}
+
+// show current page while scrolling
+const counter = document.getElementById("counter");
+const images = viewer.getElementsByTagName("img");
+
+window.addEventListener("scroll",()=>{
+  let page = 1;
+  for(let i=0;i<images.length;i++){
+    const rect = images[i].getBoundingClientRect();
+    if(rect.top <= window.innerHeight/2){
+      page = i+1;
+    }
+  }
+  counter.textContent = `${page} / ${TOTAL_PAGES}`;
+});
+
+</script>
+
+</body>
+  </html>
