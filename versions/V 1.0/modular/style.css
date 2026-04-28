@@ -1,0 +1,32 @@
+body{
+  margin:0;
+  background:#000;
+}
+
+/* container */
+.viewer{
+  width:100%;
+  max-width:900px;
+  margin:auto;
+}
+
+/* images */
+.viewer img{
+  width:100%;
+  display:block;      /* removes inline gaps */
+  margin:0;           /* no space between images */
+  padding:0;
+  background:black;
+}
+
+/* page counter floating */
+.counter{
+  position:fixed;
+  bottom:15px;
+  right:20px;
+  color:white;
+  background:rgba(0,0,0,0.6);
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:14px;
+}
